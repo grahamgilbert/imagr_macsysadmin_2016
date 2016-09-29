@@ -1,0 +1,13 @@
+server {
+    listen       80  default_server;
+    server_name  _;
+    root /usr/local/nginx/html;
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to a 404 error
+        try_files $uri $uri/ =404;
+        # uncomment the line below to enable directory indexes
+        # NOT recommended unless you know what you're doing.
+        autoindex on;
+    }
+ }

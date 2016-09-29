@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>background_image</key>
+    <string>http://192.168.33.10/AirbnbDesktopWallpapers-AL-05-07.png</string>
+    <key>workflows</key>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>MacSysAdmin 2016</string>
+            <key>Description</key>
+            <string>A workflow that will demonstrate the capabilities of Imagr</string>
+            <key>components</key>
+            <array>
+                <dict>
+                    <key>type</key>
+                    <string>image</string>
+                    <key>url</key>
+                    <string>http://192.168.33.10/Images/osx-10.12-16A322.hfs.dmg</string>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>computer_name</string>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>localize</string>
+                    <key>keyboard_layout_name</key>
+                    <string>British</string>
+                    <key>keyboard_layout_id</key>
+                    <integer>2</integer>
+                    <key>language</key>
+                    <string>en</string>
+                    <key>locale</key>
+                    <string>en_GB</string>
+                    <key>timezone</key>
+                    <string>Europe/London</string>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>package</string>
+                    <key>url</key>
+                    <string>http://192.168.33.10/Packages/ClearReg.pkg</string>
+                    <key>first_boot</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>package</string>
+                    <key>url</key>
+                    <string>http://192.168.33.10/Packages/create_msaadmin-1.0.pkg</string>
+                    <key>first_boot</key>
+                    <true/>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>included_workflow</string>
+                    <key>script</key>
+                    <string>#!/usr/bin/python
+model = "{{machine_model}}"
+if model.startswith("VMware"):
+    print 'ImagrIncludedWorkflow: vmware_tools'</string>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>script</string>
+                    <key>url</key>
+                    <string>http://192.168.33.10/Scripts/ssh.sh</string>
+                </dict>
+                <dict>
+                    <key>type</key>
+                    <string>script</string>
+                    <key>first_boot</key>
+                    <false/>
+                    <key>content</key>
+                    <string>#!/bin/bash
+/bin/mkdir -p "{{target_volume}}/CREATED_AT_IMAGING"
+echo "This was put in by Imagr" > "{{target_volume}}/CREATED_AT_IMAGING/File.txt"
+</string>
+                </dict>
+            </array>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>vmware_tools</string>
+            <key>description</key>
+            <string>Installs VMware Tools</string>
+            <key>hidden</key>
+            <true/>
+            <key>components</key>
+            <array>
+                <dict>
+                    <key>type</key>
+                    <string>package</string>
+                    <key>url</key>
+                    <string>http://192.168.33.10/Packages/VMwareTools.pkg</string>
+                </dict>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>

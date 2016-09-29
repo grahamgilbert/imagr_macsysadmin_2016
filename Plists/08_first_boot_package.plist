@@ -1,0 +1,8 @@
+<dict>
+    <key>type</key>
+    <string>package</string>
+    <key>url</key>
+    <string>http://192.168.33.10/Packages/create_msaadmin-1.0.pkg</string>
+    <key>first_boot</key>
+    <true/>
+</dict>

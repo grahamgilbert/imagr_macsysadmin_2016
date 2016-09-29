@@ -1,0 +1,14 @@
+<dict>
+    <key>type</key>
+    <string>localize</string>
+    <key>keyboard_layout_name</key>
+    <string>British</string>
+    <key>keyboard_layout_id</key>
+    <integer>2</integer>
+    <key>language</key>
+    <string>en</string>
+    <key>locale</key>
+    <string>en_GB</string>
+    <key>timezone</key>
+    <string>Europe/London</string>
+</dict>

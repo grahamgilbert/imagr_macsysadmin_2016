@@ -1,0 +1,6 @@
+<dict>
+    <key>type</key>
+    <string>script</string>
+    <key>url</key>
+    <string>http://192.168.33.10/Scripts/ssh.sh</string>
+</dict>

@@ -1,0 +1,9 @@
+<dict>
+    <key>type</key>
+    <string>included_workflow</string>
+    <key>script</key>
+    <string>#!/usr/bin/python
+model = "{{machine_model}}"
+if model.startswith("VMware"):
+print 'ImagrIncludedWorkflow: vmware_tools'</string>
+</dict>
