@@ -16,8 +16,8 @@ Vagrant.configure(2) do |config|
     docker.vm.box = "bento/ubuntu-14.04"
     docker.vm.network "private_network", ip: "192.168.33.10"
     docker.vm.provider "vmware_fusion" do |v|
-          v.vmx["memsize"] = "4096"
-          v.vmx["numvcpus"] = "2"
+          v.vmx["memsize"] = "1024"
+          v.vmx["numvcpus"] = "1"
     end
     docker.vm.provision "shell", inline: <<-SHELL
       # Make sure curl is installed
@@ -38,12 +38,12 @@ Vagrant.configure(2) do |config|
       service docker restart
     SHELL
   end
-  config.vm.define "client", autostart: false do |client|
+  config.vm.define "client" do |client|
     client.vm.box = "darwin-1011"
     client.ssh.insert_key = false
     client.vm.provider "vmware_fusion" do |v|
           v.gui = true
-          v.vmx["memsize"] = "4096"
+          v.vmx["memsize"] = "8192"
           v.vmx["numvcpus"] = "2"
           v.vmx["SMBIOS.use12CharSerialNumber"] = "TRUE"
     end
