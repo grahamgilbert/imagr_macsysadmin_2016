@@ -15,6 +15,10 @@ Vagrant.configure(2) do |config|
   config.vm.define "docker" do |docker|
     docker.vm.box = "bento/ubuntu-14.04"
     docker.vm.network "private_network", ip: "192.168.33.10"
+    docker.vm.provider "vmware_fusion" do |v|
+          v.vmx["memsize"] = "4096"
+          v.vmx["numvcpus"] = "2"
+    end
     docker.vm.provision "shell", inline: <<-SHELL
       # Make sure curl is installed
       apt-get update -y
