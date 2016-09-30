@@ -21,9 +21,9 @@ IP="192.168.33.10"
 
 # Start the web server
 docker run -d \
--v "/vagrant":/usr/local/nginx/html \
--v "/vagrant/sites-templates":/etc/nginx/sites-templates \
---name="web" \
+  -v "/vagrant":/usr/local/nginx/html \
+  -v "/vagrant/sites-templates":/etc/nginx/sites-templates \
+  --name="web" \
   --restart="always" \
   -p 80:80 \
   grahamgilbert/proxy
@@ -37,11 +37,11 @@ docker run -d \
   macadmins/tftpd
 
 docker run -d \
-    -p 0.0.0.0:67:67/udp \
-    -v "/vagrant/nbi":/nbi \
-    -e BSDPY_IFACE=eth0 \
-    -e BSDPY_NBI_URL=http://$IP/nbi \
-    -e BSDPY_IP=$IP \
-    --name bsdpy \
-    --restart=always \
-    bruienne/bsdpy:1.0
+  -p 0.0.0.0:67:67/udp \
+  -v "/vagrant/nbi":/nbi \
+  -e BSDPY_IFACE=eth0 \
+  -e BSDPY_NBI_URL=http://$IP/nbi \
+  -e BSDPY_IP=$IP \
+  --name bsdpy \
+  --restart="always" \
+  bruienne/bsdpy:1.0
