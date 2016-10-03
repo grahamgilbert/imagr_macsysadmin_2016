@@ -25,14 +25,14 @@ docker run -d \
   -v "/vagrant/sites-templates":/etc/nginx/sites-templates \
   --name="web" \
   --restart="always" \
-  -p 80:80 \
+  -p 0.0.0.0:80:80 \
   grahamgilbert/proxy
 
 
 docker run -d \
   -p 0.0.0.0:69:69/udp \
   -v "/vagrant/nbi":/nbi \
-  --name tftpd \
+  --name "tftpd" \
   --restart="always" \
   macadmins/tftpd
 
@@ -42,6 +42,6 @@ docker run -d \
   -e BSDPY_IFACE=eth0 \
   -e BSDPY_NBI_URL=http://$IP/nbi \
   -e BSDPY_IP=$IP \
-  --name bsdpy \
+  --name "bsdpy" \
   --restart="always" \
   bruienne/bsdpy:1.0
