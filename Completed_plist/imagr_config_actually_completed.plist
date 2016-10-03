@@ -4,6 +4,8 @@
 <dict>
     <key>background_image</key>
     <string>http://192.168.33.10/AirbnbDesktopWallpapers-AL-05-07.png</string>
+    <key>wait_for_network</key>
+    <false/>
     <key>workflows</key>
     <array>
         <dict>
@@ -79,6 +81,12 @@ if model.startswith("VMware"):
 echo "This was put in by Imagr" > "{{target_volume}}/CREATED_AT_IMAGING/File.txt"
 </string>
                 </dict>
+                <dict>
+                    <key>type</key>
+                    <string>included_workflow</string>
+                    <key>name</key>
+                    <string>icloud_assistant</string>
+                </dict>
             </array>
         </dict>
         <dict>
@@ -95,6 +103,23 @@ echo "This was put in by Imagr" > "{{target_volume}}/CREATED_AT_IMAGING/File.txt
                     <string>package</string>
                     <key>url</key>
                     <string>http://192.168.33.10/Packages/VMwareTools.pkg</string>
+                </dict>
+            </array>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>icloud_assistant</string>
+            <key>description</key>
+            <string>Skips the iCloud setup assistant</string>
+            <key>hidden</key>
+            <true/>
+            <key>components</key>
+            <array>
+                <dict>
+                    <key>type</key>
+                    <string>script</string>
+                    <key>url</key>
+                    <string>http://192.168.33.10/Scripts/iCloud_Assistant.sh</string>
                 </dict>
             </array>
         </dict>

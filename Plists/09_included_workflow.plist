@@ -5,5 +5,5 @@
     <string>#!/usr/bin/python
 model = "{{machine_model}}"
 if model.startswith("VMware"):
-print 'ImagrIncludedWorkflow: vmware_tools'</string>
+    print 'ImagrIncludedWorkflow: vmware_tools'</string>
 </dict>

@@ -1,0 +1,34 @@
+<dict>
+    <key>name</key>
+    <string>vmware_tools</string>
+    <key>description</key>
+    <string>Installs VMware Tools</string>
+    <key>hidden</key>
+    <false/>
+    <key>components</key>
+    <array>
+        <dict>
+            <key>type</key>
+            <string>package</string>
+            <key>url</key>
+            <string>http://192.168.33.10/Packages/VMwareTools.pkg</string>
+        </dict>
+    </array>
+</dict>
+<dict>
+    <key>name</key>
+    <string>icloud_assistant</string>
+    <key>description</key>
+    <string>Skips the iCloud setup assistant</string>
+    <key>hidden</key>
+    <true/>
+    <key>components</key>
+    <array>
+        <dict>
+            <key>type</key>
+            <string>script</string>
+            <key>url</key>
+            <string>http://192.168.33.10/Scripts/iCloud_Assistant.sh</string>
+        </dict>
+    </array>
+</dict>
