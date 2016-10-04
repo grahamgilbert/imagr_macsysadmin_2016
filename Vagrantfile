@@ -39,7 +39,7 @@ Vagrant.configure(2) do |config|
     SHELL
   end
   config.vm.define "client" do |client|
-    client.vm.box = "darwin-1011"
+    client.vm.box = "darwin-1011-nocm"
     client.ssh.insert_key = false
     client.vm.provider "vmware_fusion" do |v|
           v.gui = true
