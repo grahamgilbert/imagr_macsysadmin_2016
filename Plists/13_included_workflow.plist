@@ -26,9 +26,19 @@
     <array>
         <dict>
             <key>type</key>
-            <string>script</string>
+            <string>package</string>
             <key>url</key>
-            <string>http://192.168.33.10/Scripts/iCloud_Assistant.sh</string>
+            <string>http://192.168.33.10/Packages/Outset-SetupAssistant-1.0.pkg</string>
+            <key>first_boot</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>type</key>
+            <string>package</string>
+            <key>url</key>
+            <string>http://192.168.33.10/Packages/outset-2.0.3.pkg</string>
+            <key>first_boot</key>
+            <false/>
         </dict>
     </array>
 </dict>
