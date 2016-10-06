@@ -6,6 +6,6 @@
     <key>content</key>
     <string>#!/bin/bash
 /bin/mkdir -p "{{target_volume}}/CREATED_AT_IMAGING"
-echo "This was put in by Imagr" > "{{target_volume}}/CREATED_AT_IMAGING/File.txt"
+echo "This was put in by Imagr" &gt; "{{target_volume}}/CREATED_AT_IMAGING/File.txt"
 </string>
 </dict>
